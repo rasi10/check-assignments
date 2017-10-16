@@ -20,11 +20,17 @@ const devices = require('puppeteer/DeviceDescriptors');
   })
   await page.waitFor(4000);
 
-  await page.screenshot({path: 'assignment1_now.jpeg', quality:100, fullPage: true});
+  await page.screenshot({path: 'assignment1_now.jpeg', omitBackground:true ,quality:100, fullPage: true});
 
+  /*await page.screenshot({
+	path: 'assignment1_now.jpg', 
+	quality:100, 
+	//fullPage: true, 
+	clip: {x:0,y:0, width:400, height:800},
+	});
+*/
   browser.close();
 })();
-
 
 
 
